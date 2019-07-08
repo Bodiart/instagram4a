@@ -26,8 +26,8 @@ import okhttp3.Response;
 public class Instagram4Android {
 
     private String deviceId;
-    private String username;
-    private String password;
+    private String username = "";
+    private String password = "";
     private String accessToken;
     private boolean isLoggedIn;
     private String uuid;
