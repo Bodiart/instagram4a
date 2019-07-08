@@ -43,6 +43,9 @@ public class Instagram4Android {
         this.password = password;
     }
 
+    public Instagram4Android() {
+    }
+
     public void setup() {
         this.deviceId = InstagramHashUtil.generateDeviceId(this.username, this.password);
         this.uuid = InstagramGenericUtil.generateUuid(true);
@@ -74,6 +77,7 @@ public class Instagram4Android {
 
     }
 
+    @Deprecated // now need to login by browser
     public InstagramLoginResult login() throws Exception {
 
         InstagramLoginPayload loginRequest = new InstagramLoginPayload();
