@@ -115,10 +115,10 @@ public class Instagram4Android {
         syncFeatures.setId(userId);
         syncFeatures.setExperiments(InstagramConstants.DEVICE_EXPERIMENTS);
 
-        this.sendRequest(new InstagramSyncFeaturesRequest(syncFeatures));
-        this.sendRequest(new InstagramAutoCompleteUserListRequest());
-        this.sendRequest(new InstagramGetInboxRequest());
-        this.sendRequest(new InstagramGetRecentActivityRequest());
+//        this.sendRequest(new InstagramSyncFeaturesRequest(syncFeatures)); todo no need
+//        this.sendRequest(new InstagramAutoCompleteUserListRequest());
+//        this.sendRequest(new InstagramGetInboxRequest());
+//        this.sendRequest(new InstagramGetRecentActivityRequest());
     }
 
     public String getOrFetchCsrf(HttpUrl url) throws IOException, InstantiationException, IllegalAccessException {
