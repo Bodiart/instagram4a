@@ -114,11 +114,6 @@ public class Instagram4Android {
         syncFeatures.set_uid(userId);
         syncFeatures.setId(userId);
         syncFeatures.setExperiments(InstagramConstants.DEVICE_EXPERIMENTS);
-
-//        this.sendRequest(new InstagramSyncFeaturesRequest(syncFeatures)); todo no need
-//        this.sendRequest(new InstagramAutoCompleteUserListRequest());
-//        this.sendRequest(new InstagramGetInboxRequest());
-//        this.sendRequest(new InstagramGetRecentActivityRequest());
     }
 
     public String getOrFetchCsrf(HttpUrl url) throws IOException, InstantiationException, IllegalAccessException {
@@ -142,7 +137,7 @@ public class Instagram4Android {
         return null;
     }
 
-    private <T> T sendRequest(InstagramRequest<T> request) throws IOException, IllegalAccessException, InstantiationException {
+    public <T> T sendRequest(InstagramRequest<T> request) throws IOException, IllegalAccessException, InstantiationException {
 
         if (!this.isLoggedIn
                 && request.requiresLogin()) {
