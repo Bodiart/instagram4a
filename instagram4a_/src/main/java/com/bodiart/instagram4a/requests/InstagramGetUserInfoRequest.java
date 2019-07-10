@@ -21,7 +21,6 @@ public class InstagramGetUserInfoRequest extends InstagramPostRequest<InstagramC
         Map<String, String> params = new HashMap<>();
         params.put("edit", "true");
 
-//        return "accounts/current_user";
         return "users/" + userId + "/info";
     }
 
