@@ -193,4 +193,8 @@ public class Instagram4Android {
     public void addCookies(Map<String, Cookie> addCookies){
         cookieStore.putAll(addCookies);
     }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
 }
