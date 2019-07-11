@@ -103,10 +103,6 @@ public class Instagram4Android {
     }
 
     public void auth(long userID) throws IllegalAccessException, IOException, InstantiationException {
-        this.userId = userID;
-
-        this.rankToken = this.userId + "_" + this.uuid;
-        this.isLoggedIn = true;
 
         InstagramSyncFeaturesPayload syncFeatures = new InstagramSyncFeaturesPayload();
         syncFeatures.set_uuid(uuid);
@@ -114,6 +110,12 @@ public class Instagram4Android {
         syncFeatures.set_uid(userId);
         syncFeatures.setId(userId);
         syncFeatures.setExperiments(InstagramConstants.DEVICE_EXPERIMENTS);
+
+
+        this.userId = userID;
+
+        this.rankToken = this.userId + "_" + this.uuid;
+        this.isLoggedIn = true;
     }
 
     public String getOrFetchCsrf(HttpUrl url) throws IOException, InstantiationException, IllegalAccessException {
