@@ -199,4 +199,8 @@ public class Instagram4Android {
     public boolean isLoggedIn() {
         return isLoggedIn;
     }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
 }
