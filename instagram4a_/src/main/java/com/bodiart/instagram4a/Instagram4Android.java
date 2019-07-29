@@ -102,15 +102,7 @@ public class Instagram4Android {
         return loginResult;
     }
 
-    public void auth(long userID) throws IllegalAccessException, IOException, InstantiationException {
-
-//        InstagramSyncFeaturesPayload syncFeatures = new InstagramSyncFeaturesPayload();
-//        syncFeatures.set_uuid(uuid);
-//        syncFeatures.set_csrftoken(getOrFetchCsrf(null));
-//        syncFeatures.set_uid(userId);
-//        syncFeatures.setId(userId);
-//        syncFeatures.setExperiments(InstagramConstants.DEVICE_EXPERIMENTS);
-
+    public void auth(long userID) {
 
         this.userId = userID;
 

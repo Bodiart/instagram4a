@@ -12,6 +12,10 @@ public class InstagramGetUserFollowingRequest extends InstagramGetRequest<Instag
     private String maxId;
     private Long userId;
 
+    public InstagramGetUserFollowingRequest(Long userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String getUrl() {
         String baseUrl = "friendships/" + userId + "/following/?rank_token=" + api.getRankToken();
