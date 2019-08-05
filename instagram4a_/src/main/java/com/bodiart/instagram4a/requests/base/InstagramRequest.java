@@ -1,4 +1,4 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.base;
 
 import com.bodiart.instagram4a.Instagram4Android;
 import com.bodiart.instagram4a.payload.StatusResult;

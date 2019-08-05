@@ -1,27 +1,25 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.follow;
 
-import com.bodiart.instagram4a.payload.InstagramCurrentUserResult;
+import com.bodiart.instagram4a.payload.StatusResult;
+import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class InstagramGetUserInfoRequest extends InstagramPostRequest<InstagramCurrentUserResult> {
+public class InstagramFollowRequest extends InstagramPostRequest<StatusResult> {
 
-    private Long userId;
+    private long userId;
 
-    public InstagramGetUserInfoRequest(Long userId) {
+    public InstagramFollowRequest(long userId) {
         this.userId = userId;
     }
 
     @Override
     public String getUrl() {
-        Map<String, String> params = new HashMap<>();
-        params.put("edit", "true");
-
-        return "users/" + userId + "/info";
+        return "friendships/create/" + userId + "/";
     }
 
     @Override
@@ -30,15 +28,17 @@ public class InstagramGetUserInfoRequest extends InstagramPostRequest<InstagramC
         Map<String, Object> likeMap = new LinkedHashMap<>();
         likeMap.put("_uuid", api.getUuid());
         likeMap.put("_uid", api.getUserId());
+        likeMap.put("user_id", userId);
         likeMap.put("_csrftoken", api.getOrFetchCsrf(null));
 
         ObjectMapper mapper = new ObjectMapper();
 
         return mapper.writeValueAsString(likeMap);
+
     }
 
     @Override
-    public InstagramCurrentUserResult parseResult(int resultCode, String content) throws IllegalAccessException, IOException, InstantiationException {
-        return parseJson(resultCode, content, InstagramCurrentUserResult.class);
+    public StatusResult parseResult(int resultCode, String content) throws IllegalAccessException, IOException, InstantiationException {
+        return parseJson(resultCode, content, StatusResult.class);
     }
 }

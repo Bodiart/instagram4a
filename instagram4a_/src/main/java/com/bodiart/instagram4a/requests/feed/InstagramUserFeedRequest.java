@@ -1,6 +1,7 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.feed;
 
 import com.bodiart.instagram4a.payload.InstagramFeedResult;
+import com.bodiart.instagram4a.requests.base.InstagramGetRequest;
 
 import java.io.IOException;
 

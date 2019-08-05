@@ -1,7 +1,7 @@
 package com.bodiart.instagram4a.internal;
 
 import com.bodiart.instagram4a.payload.StatusResult;
-import com.bodiart.instagram4a.requests.InstagramGetRequest;
+import com.bodiart.instagram4a.requests.base.InstagramGetRequest;
 import com.bodiart.instagram4a.util.InstagramGenericUtil;
 
 import java.io.IOException;

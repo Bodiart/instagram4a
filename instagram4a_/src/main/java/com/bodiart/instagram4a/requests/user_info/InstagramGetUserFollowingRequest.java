@@ -1,9 +1,7 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.user_info;
 
-import androidx.annotation.NonNull;
-
-import com.bodiart.instagram4a.InstagramConstants;
 import com.bodiart.instagram4a.payload.InstagramGetUserFollowersResult;
+import com.bodiart.instagram4a.requests.base.InstagramGetRequest;
 
 import java.io.IOException;
 

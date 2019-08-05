@@ -1,7 +1,7 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.user_info;
 
 import com.bodiart.instagram4a.payload.InstagramCurrentUserResult;
-import com.bodiart.instagram4a.util.InstagramGenericUtil;
+import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class InstagramCurrentUserRequest extends InstagramPostRequest<InstagramCurrentUserResult>{
+public class InstagramCurrentUserRequest extends InstagramPostRequest<InstagramCurrentUserResult> {
 
     @Override
     public String getUrl() {

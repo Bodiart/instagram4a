@@ -1,6 +1,7 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.follow;
 
 import com.bodiart.instagram4a.payload.StatusResult;
+import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;

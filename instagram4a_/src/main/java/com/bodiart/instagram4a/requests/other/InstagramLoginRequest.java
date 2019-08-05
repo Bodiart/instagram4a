@@ -1,7 +1,8 @@
-package com.bodiart.instagram4a.requests;
+package com.bodiart.instagram4a.requests.other;
 
 import com.bodiart.instagram4a.payload.InstagramLoginPayload;
 import com.bodiart.instagram4a.payload.InstagramLoginResult;
+import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
