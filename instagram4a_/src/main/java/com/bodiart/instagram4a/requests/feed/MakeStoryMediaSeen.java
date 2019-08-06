@@ -28,9 +28,6 @@ public class MakeStoryMediaSeen extends InstagramPostRequest<StatusResult> {
     @Override
     public String getPayload() throws IOException, IllegalAccessException, InstantiationException {
 
-
-
-
         Map<String, Object> likeMap = new LinkedHashMap<>();
         likeMap.put("_uuid", api.getUuid());
         likeMap.put("_uid", api.getUserId());
@@ -47,7 +44,7 @@ public class MakeStoryMediaSeen extends InstagramPostRequest<StatusResult> {
 
     @Override
     public StatusResult parseResult(int resultCode, String content) throws IllegalAccessException, IOException, InstantiationException {
-        return null;
+        return parseJson(resultCode, content, StatusResult.class);
     }
 
     private Map<String, String> makeReels(){
@@ -73,7 +70,7 @@ public class MakeStoryMediaSeen extends InstagramPostRequest<StatusResult> {
 
             // Determine the source ID for this item. This is where the item was
             // seen from, such as a UserID or a Location-StoryTray ID.
-            String itemSourceId = item.user.pk;
+            Long itemSourceId = item.user.pk;
 
             // Key Format: "mediaPk_userPk_sourceId".
             // NOTE: In case of seeing stories on a user's profile, their
