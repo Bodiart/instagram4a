@@ -90,6 +90,6 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
 
         }
 
-        return InstagramHashUtil.mapToString(reels, ";");
+        return InstagramHashUtil.mapToString(reels, ",");
     }
 }

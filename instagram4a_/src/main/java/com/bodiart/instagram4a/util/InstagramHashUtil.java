@@ -88,10 +88,11 @@ public class InstagramHashUtil {
     }
 
     public static String mapToString(Map<String, String> map, String separator){
-        StringBuilder mapAsString = new StringBuilder();
+        StringBuilder mapAsString = new StringBuilder("[");
         for (String key : map.keySet()) {
             mapAsString.append(key).append("=").append(map.get(key)).append(separator);
         }
+        mapAsString.append("]");
         return mapAsString.toString();
     }
 
