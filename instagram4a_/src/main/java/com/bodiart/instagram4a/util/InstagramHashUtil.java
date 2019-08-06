@@ -10,6 +10,7 @@ import java.nio.charset.Charset;
 import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Map;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -84,6 +85,15 @@ public class InstagramHashUtil {
         return "ig_sig_key_version=" + InstagramConstants.API_KEY_VERSION + "&signed_body=" + signedBody + '.'
                 + parsedData;
 
+    }
+
+    public static String mapToString(Map<String, String> map, String separator){
+        StringBuilder mapAsString = new StringBuilder("{");
+        for (String key : map.keySet()) {
+            mapAsString.append(key).append("=").append(map.get(key)).append(separator);
+        }
+        mapAsString.delete(mapAsString.length()-2, mapAsString.length()).append("}");
+        return mapAsString.toString();
     }
 
 }
