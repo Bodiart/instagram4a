@@ -9,6 +9,10 @@ public class InstagramUserStoryFeedRequest extends InstagramGetRequest<Instagram
 
     private String userId;
 
+    public InstagramUserStoryFeedRequest(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String getUrl() {
         return String.format("feed/user/%s/story/", userId);
