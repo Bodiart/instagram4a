@@ -56,7 +56,7 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
         // Build the list of seen media, with human randomization of seen-time.
         Map<String, String> reels = new HashMap<>();
 
-        Long maxSeenAt = System.currentTimeMillis(); // Get current global UTC timestamp.
+        Long maxSeenAt = System.currentTimeMillis() / 1000; // Get current global UTC timestamp.
         Long seenAt = maxSeenAt - (3 * feedItems.size());
 
         for (InstagramFeedItem item : feedItems){
