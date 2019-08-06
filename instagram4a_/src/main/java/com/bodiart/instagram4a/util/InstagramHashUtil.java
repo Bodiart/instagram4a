@@ -92,7 +92,7 @@ public class InstagramHashUtil {
         for (String key : map.keySet()) {
             mapAsString.append(key).append("=").append(map.get(key)).append(separator);
         }
-        mapAsString.append("]");
+        mapAsString.deleteCharAt(mapAsString.length() - 1).append("]");
         return mapAsString.toString();
     }
 
