@@ -52,7 +52,7 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
         return parseJson(resultCode, content, StatusResult.class);
     }
 
-    private Map<String, String> makeReels(){
+    private String makeReels(){
         // Build the list of seen media, with human randomization of seen-time.
         Map<String, String> reels = new HashMap<>();
 
@@ -90,7 +90,7 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
 
         }
 
-//        return InstagramHashUtil.mapToString(reels, ",");
-        return reels;
+        return InstagramHashUtil.mapToString(reels, ",");
+//        return reels;
     }
 }
