@@ -1,6 +1,6 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.user;
 
-import java.util.Map;
+import com.bodiart.instagram4a.payload.base.StatusResult;
 
 public class InstagramCurrentUserResult extends StatusResult {
 

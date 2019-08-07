@@ -6,9 +6,11 @@ package com.bodiart.instagram4a;
 
 public class InstagramConstants {
 
-    public static final String API_URL = "https://i.instagram.com/api/v1/";
+    public final static String API_URL = "https://i.instagram.com/api/v1/";
+    public final static String API_URL2 = "https://i.instagram.com/api/v2/";
 
     public static final String API_KEY = "4f8732eb9ba7d1c8e8897a75d6474d4eb3f5279137431b2aafb71fafe2abe178";
+//    public static final String API_KEY = "937463b5272b5d60e9d20f0f8d7d192193dd95095a3ad43725d494300a5ea5fc";
     //public static final String API_KEY = "8b138ac7f686560c64fa4c04b884a0509c4311cccaa209353799c888c6995572";
 
     public static final String API_KEY_VERSION = "4";

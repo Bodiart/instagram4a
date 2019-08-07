@@ -1,4 +1,6 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.media;
+
+import com.bodiart.instagram4a.payload.feed.InstagramImageVersions_2;
 
 import java.io.Serializable;
 import java.util.List;

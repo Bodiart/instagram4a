@@ -1,4 +1,4 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.media;
 
 import java.io.Serializable;
 

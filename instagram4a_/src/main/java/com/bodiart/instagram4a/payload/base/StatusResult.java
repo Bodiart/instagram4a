@@ -1,4 +1,4 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.base;
 
 import androidx.annotation.NonNull;
 

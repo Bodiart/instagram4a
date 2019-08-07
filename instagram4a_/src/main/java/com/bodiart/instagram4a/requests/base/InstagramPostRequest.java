@@ -25,8 +25,14 @@ public abstract class InstagramPostRequest<T> extends InstagramRequest<T> {
     @Override
     public T execute() throws IOException, InstantiationException, IllegalAccessException {
 
+        String baseUrl = InstagramConstants.API_URL;
+
+        if (reqiureApiV2()){
+            baseUrl = InstagramConstants.API_URL2;
+        }
+
         Request request = new Request.Builder()
-                .url(InstagramConstants.API_URL + getUrl())
+                .url(baseUrl + getUrl())
                 .addHeader("Connection", "close")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cookie2", "$Version=1")
@@ -36,7 +42,8 @@ public abstract class InstagramPostRequest<T> extends InstagramRequest<T> {
                 .addHeader("X-IG-Connection-Speed", "-1kbps")
                 .addHeader("X-IG-App-ID", "567067343352427")
                 .addHeader("User-Agent", InstagramConstants.USER_AGENT)
-                .post(RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"), InstagramHashUtil.generateSignature(getPayload())))
+                .post(RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"),
+                        InstagramHashUtil.generateSignature(getPayload())))
                 .build();
 
         Response response = api.getClient().newCall(request).execute();

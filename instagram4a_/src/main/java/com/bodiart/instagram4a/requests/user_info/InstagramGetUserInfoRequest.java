@@ -1,6 +1,6 @@
 package com.bodiart.instagram4a.requests.user_info;
 
-import com.bodiart.instagram4a.payload.InstagramCurrentUserResult;
+import com.bodiart.instagram4a.payload.user.InstagramCurrentUserResult;
 import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

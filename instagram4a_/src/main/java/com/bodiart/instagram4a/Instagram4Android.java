@@ -2,8 +2,8 @@ package com.bodiart.instagram4a;
 
 
 import com.bodiart.instagram4a.internal.InstagramFetchHeadersRequest;
-import com.bodiart.instagram4a.payload.InstagramLoginPayload;
-import com.bodiart.instagram4a.payload.InstagramLoginResult;
+import com.bodiart.instagram4a.payload.user.InstagramLoginPayload;
+import com.bodiart.instagram4a.payload.user.InstagramLoginResult;
 import com.bodiart.instagram4a.requests.base.InstagramRequest;
 import com.bodiart.instagram4a.requests.other.InstagramLoginRequest;
 import com.bodiart.instagram4a.util.InstagramGenericUtil;

@@ -89,16 +89,6 @@ public class InstagramHashUtil {
 
     public static String mapToString(Map<String, String> map, String separator){
 
-//        {
-//            "1309763051087626108_124317_124317": ["1470355944_1470372029"],
-//            "1309764045355643149_124317_124317": ["1470356063_1470372039"],
-//            "1309818450243415912_124317_124317": ["1470362548_1470372060"],
-//            "1309764653429046112_124317_124317": ["1470356135_1470372049"],
-//            "1309209597843679372_124317_124317": ["1470289967_1470372013"]
-//        }
-
-//        "reels" -> "{2104627324929802811_16186690516_16186690516=[1565111149_1565160491]}"
-
         StringBuilder mapAsString = new StringBuilder("{");
         for (String key : map.keySet()) {
             mapAsString.append("\"").append(key).append("\"").append(":").append("[\"").append(map.get(key)).append("\"]").append(separator);

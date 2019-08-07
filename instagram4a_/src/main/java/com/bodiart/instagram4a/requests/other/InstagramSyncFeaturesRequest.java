@@ -3,8 +3,8 @@ package com.bodiart.instagram4a.requests.other;
 
 import androidx.annotation.NonNull;
 
-import com.bodiart.instagram4a.payload.InstagramSyncFeaturesPayload;
-import com.bodiart.instagram4a.payload.InstagramSyncFeaturesResult;
+import com.bodiart.instagram4a.payload.base.InstagramSyncFeaturesPayload;
+import com.bodiart.instagram4a.payload.base.InstagramSyncFeaturesResult;
 import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

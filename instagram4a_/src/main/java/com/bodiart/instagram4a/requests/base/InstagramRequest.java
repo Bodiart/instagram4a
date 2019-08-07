@@ -1,7 +1,7 @@
 package com.bodiart.instagram4a.requests.base;
 
 import com.bodiart.instagram4a.Instagram4Android;
-import com.bodiart.instagram4a.payload.StatusResult;
+import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,6 +24,10 @@ public abstract class InstagramRequest<T> {
      * @return the url
      */
     public abstract String getUrl();
+
+    public boolean reqiureApiV2(){
+        return false;
+    }
 
     /**
      * @return the method

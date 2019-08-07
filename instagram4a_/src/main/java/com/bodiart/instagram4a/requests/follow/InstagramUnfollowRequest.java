@@ -1,6 +1,6 @@
 package com.bodiart.instagram4a.requests.follow;
 
-import com.bodiart.instagram4a.payload.StatusResult;
+import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,13 +28,12 @@ public class InstagramUnfollowRequest extends InstagramPostRequest<StatusResult>
         Map<String, Object> likeMap = new LinkedHashMap<>();
         likeMap.put("_uuid", api.getUuid());
         likeMap.put("_uid", api.getUserId());
-        likeMap.put("user_id", userId);
         likeMap.put("_csrftoken", api.getOrFetchCsrf(null));
+        likeMap.put("user_id", userId);
 
         ObjectMapper mapper = new ObjectMapper();
-        String payloadJson = mapper.writeValueAsString(likeMap);
 
-        return payloadJson;
+        return mapper.writeValueAsString(likeMap);
     }
 
     @Override

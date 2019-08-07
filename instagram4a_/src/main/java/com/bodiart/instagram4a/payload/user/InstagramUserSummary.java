@@ -1,4 +1,4 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.user;
 
 import java.io.Serializable;
 import java.util.Objects;

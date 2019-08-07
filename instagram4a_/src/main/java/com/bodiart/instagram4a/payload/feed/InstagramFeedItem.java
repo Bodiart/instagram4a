@@ -1,4 +1,9 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.feed;
+
+import com.bodiart.instagram4a.payload.media.InstagramCarouselMedia;
+import com.bodiart.instagram4a.payload.user.InstagramUser;
+import com.bodiart.instagram4a.payload.user.InstagramUserSummary;
+import com.bodiart.instagram4a.payload.media.InstagramVideoVersions;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.media;
+
+import com.bodiart.instagram4a.payload.user.InstagramUser;
 
 import java.util.List;
 

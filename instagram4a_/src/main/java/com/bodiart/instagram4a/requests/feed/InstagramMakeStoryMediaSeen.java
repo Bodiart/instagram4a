@@ -1,12 +1,12 @@
 package com.bodiart.instagram4a.requests.feed;
 
-import com.bodiart.instagram4a.payload.InstagramFeedItem;
-import com.bodiart.instagram4a.payload.StatusResult;
+import com.bodiart.instagram4a.payload.feed.InstagramFeedItem;
+import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
-import com.bodiart.instagram4a.util.InstagramHashUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -25,6 +25,11 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
     @Override
     public String getUrl() {
         return "media/seen/?reel=1&live_vod=0";
+    }
+
+    @Override
+    public boolean reqiureApiV2(){ // important
+        return true;
     }
 
     @Override
@@ -52,9 +57,9 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
         return parseJson(resultCode, content, StatusResult.class);
     }
 
-    private String makeReels(){
+    private Map<String, List<String>> makeReels(){
         // Build the list of seen media, with human randomization of seen-time.
-        Map<String, String> reels = new HashMap<>();
+        Map<String, List<String>> reels = new HashMap<>();
 
         Long maxSeenAt = System.currentTimeMillis() / 1000; // Get current global UTC timestamp.
         Long seenAt = maxSeenAt - (3 * feedItems.size());
@@ -83,14 +88,13 @@ public class InstagramMakeStoryMediaSeen extends InstagramPostRequest<StatusResu
             String reelId = item.id + "_" + itemSourceId;
 
             // Value Format: ["mediaTakenAt_seenAt"] (array with single string).
-            reels.put(reelId, itemTakenAt + "_" + seenAt);
+            reels.put(reelId, Arrays.asList(itemTakenAt + "_" + seenAt));
 
             // Randomly add 1-3 seconds to next seenAt timestamp, to act human.
             seenAt += new Random().nextInt(3 - 1 + 1) + 1;
 
         }
 
-        return InstagramHashUtil.mapToString(reels, ",");
-//        return reels;
+        return reels;
     }
 }

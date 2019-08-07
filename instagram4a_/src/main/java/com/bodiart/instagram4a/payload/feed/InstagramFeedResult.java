@@ -1,4 +1,6 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.feed;
+
+import com.bodiart.instagram4a.payload.base.StatusResult;
 
 import java.util.List;
 

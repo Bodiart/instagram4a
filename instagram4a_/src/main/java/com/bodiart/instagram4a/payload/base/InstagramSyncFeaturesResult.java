@@ -1,4 +1,4 @@
-package com.bodiart.instagram4a.payload;
+package com.bodiart.instagram4a.payload.base;
 
 /**
  * Created by root on 09/06/17.
