@@ -1,5 +1,7 @@
 package com.bodiart.instagram4a.payload.media;
 
+import com.bodiart.instagram4a.payload.user.InstagramFriendshipStatus;
+
 public class InstagramBroadcastOwner {
 
     public String pk;
