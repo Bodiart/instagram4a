@@ -13,6 +13,7 @@ public class InstagramUserSummary implements Serializable {
     public String profile_pic_url;
     public boolean has_anonymous_profile_picture;
     public String full_name;
+    public Long latest_reel_media;
 
     @Override
     public int hashCode() {

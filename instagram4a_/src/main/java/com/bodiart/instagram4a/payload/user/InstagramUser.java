@@ -45,7 +45,7 @@ public class InstagramUser implements Serializable {
 //    public boolean aggregate_promote_engagement;
 //    public String allowed_commenter_type;
 //    public boolean is_video_creator;
-//    public boolean has_profile_video_feed;
+//    public boolean has_profile_video_feed;  check
 //    public boolean has_highlight_reels;
 //    public boolean is_eligible_to_show_fb_cross_sharing_nux;
 //    public boolean page_id_for_new_suma_biz_account;
