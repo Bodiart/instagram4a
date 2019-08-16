@@ -32,4 +32,14 @@ public class InstagramUserSummary implements Serializable {
         return pk == user.pk;
 
     }
+
+    @Override
+    public String toString() {
+        return "InstagramUserSummary{" +
+                ", username='" + username + '\'' +
+                ", pk=" + pk +
+                ", full_name='" + full_name + '\'' +
+                ", latest_reel_media=" + latest_reel_media +
+                '}';
+    }
 }
