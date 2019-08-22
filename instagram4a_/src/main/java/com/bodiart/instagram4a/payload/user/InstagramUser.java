@@ -1,8 +1,6 @@
 package com.bodiart.instagram4a.payload.user;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
 
 public class InstagramUser implements Serializable {
     //users/ + api.getUserId() + /info
