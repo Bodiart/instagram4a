@@ -1,5 +1,6 @@
 package com.bodiart.instagram4a.refactor.kotlin
 
+import com.bodiart.instagram4a.refactor.kotlin.payload.other.InstagramLoginPayload
 import com.bodiart.instagram4a.refactor.kotlin.utils.InstagramConstants
 import com.bodiart.instagram4a.refactor.kotlin.utils.InstagramGenericUtil
 import com.bodiart.instagram4a.refactor.kotlin.utils.InstagramHashUtil
@@ -16,7 +17,7 @@ class Instagram4Android {
     private lateinit var accessToken : String
     private lateinit var uuid : String
     private lateinit var rankToken : String
-    private lateinit var client : OkHttpClient
+    lateinit var client : OkHttpClient private set
     private var userId = -1
     private var username = ""
     private var password = ""
@@ -30,6 +31,22 @@ class Instagram4Android {
         client = okClient ?: makeOkHttpClient()
     }
 
+    @Deprecated("Get keys with web view")
+    @Throws(Exception::class)
+    fun login(username : String, password : String){
+        val loginRequest = InstagramLoginPayload(
+                username = username,
+                password = password,
+                guid = uuid,
+                devideId = deviceId,
+                phoneId = InstagramGenericUtil.generateUuid(true),
+                loginAttemptAccount = 0,
+//                _csrftoken = getOrFetchCsrf(null)
+                _csrftoken = ""
+        )
+
+//        val loginResult = sendRequest(InstagramLoginRequest())
+    }
 
 
 

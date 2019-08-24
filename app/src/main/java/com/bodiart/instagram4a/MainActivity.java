@@ -20,7 +20,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.Cookie;
-import okhttp3.internal.http.HttpDate;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 .path("/")
                 .name(key)
                 .value(value)
-                .expiresAt(HttpDate.MAX_DATE)
+//                .expiresAt(HttpDate.MAX_DATE)
                 .httpOnly()
                 .secure()
                 .build();

@@ -1,8 +1,12 @@
 package com.bodiart.instagram4a.refactor.kotlin.utils
 
+import android.util.Log
+
 class InstagramConstants {
 
     companion object{
+
+        const val DEBUG = true
 
         const val API_URL = "https://i.instagram.com/api/v1/"
         val API_URL2 = "https://i.instagram.com/api/v2/"
@@ -28,6 +32,15 @@ class InstagramConstants {
         const val AUTH_CHALLENGE_REQUIRED = "challenge_required"
 
         const val OK_HTTP_CONNECTION_TIMEOUT = 30L
+
+        fun log(tag: String, msg: String, ex: Exception? = null){
+            if (DEBUG) {
+                if (ex == null)
+                    Log.d(tag, msg)
+                else
+                    Log.d(tag, msg, ex)
+            }
+        }
 
     }
 }

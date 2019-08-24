@@ -59,12 +59,12 @@ class InstagramHashUtil {
             return "android-" + md5hex(seed + volatileSeed).substring(0, 16)
         }
 
-        fun generateHash(key: String, string: String): String? {
+        fun generateHash(key: String, string: String?): String? {
             val `object` = SecretKeySpec(key.toByteArray(), "HmacSHA256")
             try {
                 val mac = Mac.getInstance("HmacSHA256")
                 mac.init(`object` as Key)
-                val byteArray = mac.doFinal(string.toByteArray(charset("UTF-8")))
+                val byteArray = mac.doFinal(string?.toByteArray(charset("UTF-8")))
                 return String(Hex().encode(byteArray), Charset.forName("ISO-8859-1")) // todo check error
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -74,7 +74,7 @@ class InstagramHashUtil {
         }
 
         @Throws(UnsupportedEncodingException::class)
-        fun generateSignature(payload: String): String {
+        fun generateSignature(payload: String?): String {
             val parsedData = URLEncoder.encode(payload, "UTF-8")
 
             val signedBody = generateHash(InstagramConstants.API_KEY, payload)
