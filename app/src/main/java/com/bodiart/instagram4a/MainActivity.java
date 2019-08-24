@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 
+import com.bodiart.instagram4a.payload.feed.InstagramReelsMediaFeedResult;
 import com.bodiart.instagram4a.payload.feed.InstagramUserStoryFeedResult;
 import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.bodiart.instagram4a.requests.feed.InstagramMakeStoryMediaSeen;
+import com.bodiart.instagram4a.requests.feed.InstagramReelsMediaFeedRequest;
 import com.bodiart.instagram4a.requests.feed.InstagramUserStoryFeedRequest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,54 +54,29 @@ public class MainActivity extends AppCompatActivity {
 
         instagram.addCookies(cookies);
 
+        ArrayList<Long> ids = new ArrayList<>();
+        ids.add(16186690516L);
+        ids.add(4663846874L);
 
-        Single.fromCallable(() -> instagram.sendRequest(new InstagramUserStoryFeedRequest("16186690516")))
+        Single.fromCallable(() -> instagram.sendRequest(new InstagramReelsMediaFeedRequest(ids)))
                 .toObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
-                .subscribe(new Observer<InstagramUserStoryFeedResult>() {
+                .subscribe(new Observer<Object>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(InstagramUserStoryFeedResult instagramUserStoryFeedResult) {
-
-                        Single.fromCallable(() -> instagram.sendRequest(new InstagramMakeStoryMediaSeen(instagramUserStoryFeedResult.reel.items)))
-                                .toObservable()
-                                .subscribeOn(Schedulers.io())
-                                .observeOn(AndroidSchedulers.mainThread())
-                                .unsubscribeOn(Schedulers.io())
-                                .subscribe(new Observer<StatusResult>() {
-                                    @Override
-                                    public void onSubscribe(Disposable d) {
-
-                                    }
-
-                                    @Override
-                                    public void onNext(StatusResult statusResult) {
-                                        Log.d("TEST", "succeed");
-                                        System.out.println();
-                                    }
-
-                                    @Override
-                                    public void onError(Throwable e) {
-                                        System.out.println();
-                                    }
-
-                                    @Override
-                                    public void onComplete() {
-
-                                    }
-                                });
-
+                    public void onNext(Object instagramReelsMediaFeedResult) {
+                        System.out.println();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        System.out.println();
+
                     }
 
                     @Override
