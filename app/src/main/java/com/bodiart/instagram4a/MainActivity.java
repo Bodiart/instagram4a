@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 
 
+import com.bodiart.instagram4a.payload.feed.InstagramFeedResult;
 import com.bodiart.instagram4a.payload.feed.InstagramReelsMediaFeedResult;
 import com.bodiart.instagram4a.payload.feed.InstagramUserStoryFeedResult;
 import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.bodiart.instagram4a.requests.feed.InstagramMakeStoryMediaSeen;
 import com.bodiart.instagram4a.requests.feed.InstagramReelsMediaFeedRequest;
+import com.bodiart.instagram4a.requests.feed.InstagramUserFeedRequest;
 import com.bodiart.instagram4a.requests.feed.InstagramUserStoryFeedRequest;
 
 import java.util.ArrayList;
@@ -63,20 +65,20 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
-                .subscribe(new Observer<Object>() {
+                .subscribe(new Observer<InstagramReelsMediaFeedResult>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(Object instagramReelsMediaFeedResult) {
+                    public void onNext(InstagramReelsMediaFeedResult instagramReelsMediaFeedResult) {
                         System.out.println();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        System.out.println();
                     }
 
                     @Override
@@ -84,6 +86,33 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+//        Single.fromCallable(() -> instagram.sendRequest(new InstagramUserFeedRequest(4663846874L, "999999999", 0)))
+//                .toObservable()
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .unsubscribeOn(Schedulers.io())
+//                .subscribe(new Observer<InstagramFeedResult>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(InstagramFeedResult instagramFeedResult) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
     }
 
     private Cookie buildCookie(String key, String value) {

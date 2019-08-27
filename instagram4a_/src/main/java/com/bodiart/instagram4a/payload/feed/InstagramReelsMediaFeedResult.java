@@ -1,8 +1,12 @@
 package com.bodiart.instagram4a.payload.feed;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Map;
+
 
 public class InstagramReelsMediaFeedResult {
 
-    Object reels;
+    @JsonProperty("reels")
+    Map<String, InstagramFeedResult> reels;
 }
