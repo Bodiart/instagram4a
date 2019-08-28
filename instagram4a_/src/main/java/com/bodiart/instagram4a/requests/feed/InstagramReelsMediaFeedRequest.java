@@ -1,14 +1,10 @@
 package com.bodiart.instagram4a.requests.feed;
 
-import com.bodiart.instagram4a.payload.base.StatusResult;
 import com.bodiart.instagram4a.payload.feed.InstagramReelsMediaFeedResult;
-import com.bodiart.instagram4a.payload.feed.InstagramUserStoryFeedResult;
 import com.bodiart.instagram4a.requests.base.InstagramPostRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +13,7 @@ public class InstagramReelsMediaFeedRequest extends InstagramPostRequest<Instagr
 
     private List<Long> ids;
 
-    public InstagramReelsMediaFeedRequest(ArrayList<Long> ids) {
+    public InstagramReelsMediaFeedRequest(List<Long> ids) {
         this.ids = ids;
     }
 
