@@ -8,5 +8,5 @@ import java.util.Map;
 public class InstagramReelsMediaFeedResult {
 
     @JsonProperty("reels")
-    Map<String, InstagramFeedResult> reels;
+    public Map<String, InstagramFeedResult> reels;
 }
