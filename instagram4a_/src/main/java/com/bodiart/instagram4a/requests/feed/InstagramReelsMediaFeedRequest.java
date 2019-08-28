@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class InstagramReelsMediaFeedRequest extends InstagramPostRequest<InstagramReelsMediaFeedResult> {
 
-    private ArrayList<Long> ids;
+    private List<Long> ids;
 
     public InstagramReelsMediaFeedRequest(ArrayList<Long> ids) {
         this.ids = ids;
